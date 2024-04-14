@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="icon" href="./img/all.png" type="image/x-icon"/>
+    <title>Nenu CS</title>
+</head>
+<body>
+    <div class="spinner"></div>
+    <div id="head_navigation" class="col-12">
+        <ul>
+            <li><a href="./index.html">Nenu CS</a></li>
+            <li><a href="./html/major-learning.html">专业学习</a></li>
+            <li><a href="./html/friend-website.html">友情链接</a></li>
+            <li><a href="./html/about.html">关于本站</a></li>
+            <li><a href="./html/nenuGPT.html">NenuGPT</a></li>
+            <li class="right_li"><button onclick="togglePopup('popup-register')">注册</button></li>
+            <li class="right_li"><button onclick="togglePopup('popup-login')">登录</button></li>
+        </ul>
+    </div>
+    <div class="popup" id="popup-login">
+        <div class="content">
+            <div class="close-btn" onclick="clearPopup('popup-login');"><img src="./img/Cancel.png" alt="none"></div>
+            <h1>登录</h1>
+            <form id="login-form" method="post">
+                <div class="input-field">
+                    <label for="lo-username">用户名</label>
+                    <input id="lo-username" name="username" placeholder="3~10位" type="text" required>
+                </div>
+                <div class="input-field">
+                    <label for="lo-password">密码</label>
+                    <input id="lo-password" name="password" placeholder="8~20位" type="password" required>
+                </div>
+                <button type="submit">提交</button>
+            </form>
+            <div id="fill"><i></i></div>
+            <p>没有账户？<button onclick="clearPopup('popup-login');togglePopup('popup-register')" class="register">注册</button></p>
+        </div>
+    </div>
+    <div class="popup" id="popup-register">
+        <div class="content">
+            <div class="close-btn" onclick="clearPopup('popup-register')"><img src="./img/Cancel.png" alt="none"></div>
+            <h1>注册</h1>
+            <form id="register-form" method="post">
+                <div class="input-field">
+                    <label for="re-username">用户名</label>
+                    <input id="re-username" name="username" placeholder="3~10位" type="text" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">邮箱</label>
+                    <input id="email" name="email" placeholder="支持邮箱：qq、163、gmail" type="text" required>
+                </div>
+                <div class="input-field">
+                    <label for="re-password">密码</label>
+                    <input id="re-password" name="password" placeholder="8~20位" type="password" required>
+                </div>
+                <div class="input-field">
+                    <label for="confirm-password">确认密码</label>
+                    <input id="confirm-password" name="confirm-password" placeholder="请再次输入密码" type="password" required>
+                </div>
+                <button type="submit">提交</button>
+            </form>
+        </div>
+    </div>
+    <div id="header" class="col-12">
+        <h1>欢迎来到 Nenu CS</h1>
+        <p>东北师范大学 计算机科学与技术学习论坛</p>
+    </div>
+    <div id="main_container" class="col-12">
+        <div id="side-column" class="col-3">
+            <div id="blog_navigation">
+                <ul>
+                    <li id="publish" class="navi_item"><a class="button" href="#">发布主题</a></li>
+                    <li class="navi_item"><span class="small-ico" style="--color: #3374b9">s</span><a class="link_text ico" href="#" >全部主题</a></li>
+                    <li class="navi_item"><span class="small-ico" style="--color: #f0ef99">s</span><a class="link_text ico" href="#">标签</a></li>
+                    <hr>
+                    <li class="navi_item"><span class="small-ico" style="--color: #3374b9">s</span><a class="link_text ico" href="#">综合讨论</a></li>
+                    <li class="navi_item"><span class="small-ico" style="--color: #f4dc61">s</span><a class="link_text ico" href="#">分享创造</a></li>
+                    <li class="navi_item"><span class="small-ico" style="--color: #74c77b">s</span><a class="link_text ico" href="#">问与答</a></li>
+                    <li class="navi_item"><span class="small-ico" style="--color: #c774b2">s</span><a class="link_text ico" href="#">More...</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-column" class="col-8">
+            <div id="main_blog_container">
+                <div id="blog_sort" ><a class="link_text button" href="./index.html">最新回复</a></div>
+                <div class="blog_item">
+                    <div class="user_head col-1"><img src="./img/head/snowman.png" alt="none"></div>
+                    <div class="blog_content col-11">
+                        <a class="link_text clickable_block" href="https://0xffff.one/d/1431-fan-spam-ji-zhi-xin-zhu-ce-yong-hu">
+                            <div class="comments">评论 12</div><div class="tag" style="--tagColor:#667c99">站务</div>
+                            <h3>反 SPAM 机制：新注册用户首次发帖需审核</h3>
+                            <div class="blog_info reply-ico"><p>Deepwind 回复于23/3/30</p></div>
+                            <p class="summary">最近论坛不时会被骚扰刷 SPAM 广告，为了避免广告帖泛滥，判断验证注册用户是否真实，目前站点对新用户 首次发帖 / 发新话题 新增一个审核流程，审核通过才展示出来。<br>
+                            要点：<br>
+                            这里只影响第一次发帖/发新话题，第一次审核通过后不会再有限制。<br>
+                            所有存量老用户均无此限制
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog_item">
+                    <div class="user_head col-1"><img src="./img/head/duck.png" alt="none"></div>
+                    <div class="blog_content col-11">
+                        <a class="link_text clickable_block" href="https://0xffff.one/d/1547-nixos-yu-flakes-yi-fen-fei-guan">
+                            <div class="comments">评论 1</div><div class="tag" style="--tagColor:#662c99">博客区</div>
+                            <h3>NixOS 与 Flakes | 一份非官方的新手指南</h3>
+                            <div class="blog_info reply-ico"><p>Carles 回复于23/6/25</p></div>
+                            
+                        </a>
+                    </div>
+                </div>
+                <div class="blog_item">
+                    <div class="user_head col-1"><img src="./img/head/xzkb.png" alt="none"></div>
+                    <div class="blog_content col-11">
+                        <a class="link_text clickable_block" href="https://0xffff.one/d/1548-yong-zi-ran-yu-yan-cha-xun">
+                            <div class="comments">评论 0</div><div class="tag" style="--tagColor:#00bcd4">分享创造</div>
+                            <h3>用自然语言查询Beancount</h3>
+                            <div class="blog_info reply-ico"><p>Mike 回复于23/5/24</p></div>
+                            <p class="summary">Beancount 是一个复式记账工具，我用了它记账两三个月了，关于bencount本身如果有兴趣的可以这个系列文章。它有一个 query 的功能，可以用类似 SQL 的语法来查询数据。最近两天花时间写了个工具使用 OpenAI 提供的接口写自然语言生成 Beancount query language 语句。</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog_item">
+                    <div class="user_head col-1"><img src="./img/head/girl.png" alt="none"></div>
+                    <div class="blog_content col-11">
+                        <a class="link_text clickable_block" href="https://0xffff.one/d/1541-tui-jian-yi-ge-kai-yuan-de-qu-zhong">
+                            <div class="comments">评论 5</div><div class="tag" style="--tagColor:#8a6aad">分享发现</div>
+                            <h3>推荐一个开源的，去中心化的GPT工具-GPT4W</h3>
+                            <div class="blog_info reply-ico"><p>lina 回复于23/6/27</p></div>
+                            <p class="summary">体验了下来最大的诱惑力就是去中心化，官方主打一个decentralized AI。这意味着不需要提供任何个人身份信息，就能注册，相比于openai本尊，省去很多麻烦，尤其对墙内硬刚需用户比较友好。</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog_item">
+                    <div class="user_head col-1"><img src="./img/head/boy.png" alt="none"></div>
+                    <div class="blog_content col-11">
+                        <a class="link_text clickable_block" href="https://0xffff.one/d/1535-da-san-bian-yi-yuan-li-de-xue-xi">
+                            <div class="comments">评论 4</div><div class="tag" style="--tagColor:#d1612d">问与答</div>
+                            <h3>大三编译原理的学习</h3>
+                            <div class="blog_info reply-ico"><p>Bintou 回复于23/6/26</p></div>
+                            <p class="summary">听说大三的编译原理很难很难，请问各位师兄师姐有没有什么编译原理的学习资源，能在大二下的暑假提前学一学呢？或者说，如果想在大二下的暑假提前学一学，各位师兄师姐有什么建议吗？非常感谢！</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/cdn.staticfile.org_jquery_1.10.2_jquery.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</html>

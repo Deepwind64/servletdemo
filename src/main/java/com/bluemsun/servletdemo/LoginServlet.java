@@ -1,23 +1,26 @@
 package com.bluemsun.servletdemo;
 
 import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+/**
+ * @author deepwind
+ */
 public class LoginServlet extends HttpServlet {
     private ServletConfig config;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        this.config = this.getServletConfig();
+        this.config = getServletConfig();
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
@@ -28,18 +31,25 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String pwd = req.getParameter("password");
         // 获取 session 中的用户名密码
+        /*
         HttpSession session = req.getSession();
         String tmpUsername = (String) session.getAttribute("username");
-        tmpUsername = tmpUsername==null ? "" : tmpUsername;
+        tmpUsername = tmpUsername == null ? "" : tmpUsername;
         String tmpPwd = (String) session.getAttribute("password");
         tmpPwd = tmpPwd == null ? "" : tmpPwd;
+         */
+        // servlet context implements
+        ServletContext servletContext = getServletContext();
+        String tmpUsername = (String) servletContext.getAttribute("username");
+        tmpUsername = tmpUsername == null ? "" : tmpUsername;
+        String tmpPwd = (String) servletContext.getAttribute("password");
+        tmpPwd = tmpPwd == null ? "" : tmpPwd;
 
-        if (innerUsername.equals(username) || tmpUsername.equals(username)){
+        if (innerUsername.equals(username) || tmpUsername.equals(username)) {
             if (innerPwd.equals(pwd) || tmpPwd.equals(pwd)) {
                 resp.getWriter().println("登录成功");
             }
-        }
-        else {
+        } else {
             resp.getWriter().println("用户名或密码错误");
         }
     }

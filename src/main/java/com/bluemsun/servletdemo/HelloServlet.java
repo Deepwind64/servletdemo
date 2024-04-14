@@ -1,22 +1,16 @@
 package com.bluemsun.servletdemo;
 
 import java.io.*;
-
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import jakarta.servlet.ServletResponse;
 
 
-//@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
-    private ServletConfig config;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        super.init(config);
+    public void init(){
         message = "Hello World!";
     }
     @Override
@@ -28,7 +22,7 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }
-
+    @Override
     public void destroy() {
     }
 }
